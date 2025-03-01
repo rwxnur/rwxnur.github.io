@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuli institute</title>
+    <style>
+        .video-container{
+            display: flex;
+            justify-content: center; 
+            height: 100vh; 
+        }
+    </style>
+</head>
+<body>
+
+    <select id="playlistSelector" onchange="changePlaylist()">
+        <option value="PLnuA5MsYIH_g4s-aGDajuJISUjJ_I9sCZ">Friday khutbah</option>
+        <option value="PLnuA5MsYIH_iLRLnaq_Eab2f6OubBAbqH">Project Illumine 2: Sirah</option>
+        <option value="PLnuA5MsYIH_i7mDGRkhRPOGAefGz9XEwV">Project Illumine: The Light of the Quran</option>
+
+    </select>
+
+    <div class="video-container">
+        <iframe id="playlistFrame" width="560" height="315" 
+        src="https://www.youtube.com/embed/videoseries?si=1j89NZONvW3huilZ&amp;list=PLnuA5MsYIH_g4s-aGDajuJISUjJ_I9sCZ" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <script>
+        function changePlaylist() {
+            let selectedPlaylist = document.getElementById("playlistSelector").value;
+            document.getElementById("playlistFrame").src ="https://www.youtube.com/embed/videoseries?si=1j89NZONvW3huilZ&amp;list=" + selectedPlaylist; 
+        }
+    </script>
+</body>
+</html>
